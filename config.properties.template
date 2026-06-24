@@ -1,11 +1,13 @@
-# Kernel Configuration for Infinix Note 30 4G (Mahiru/Millennium Source)
+# Core Build Target Configurations
 GKI_VERSION=android12-5.10
 KERNEL_REPO=https://github.com
 KERNEL_BRANCH=millennium-base
 KERNEL_IMAGE_NAME=Image
 
-# Network Driver Injection for Atheros AR9271
+# Network Stack Expansion For External Hardware Controls
 EXTRA_CONFIGS="CONFIG_MODULES=y CONFIG_WIRELESS=y CONFIG_NET_CORE=y CONFIG_WLAN=y CONFIG_CFG80211=y CONFIG_MAC80211=y CONFIG_ATH_CARDS=y CONFIG_ATH9K_HTC=y"
 
-# Toolchain settings
+# Toolchain Compiler Configurations
+BUILD_ARGS="ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- LLVM=1 LLVM_IAS=1"
+CLANG_VERSION=r450784d
 NEED_CCACHE=false
